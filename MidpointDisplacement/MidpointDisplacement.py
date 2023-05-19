@@ -8,11 +8,11 @@ def midpoint_displacement(xL, yL, xR, yR, roughness, threshold):
 
     xM = (xL + xR) / 2
     yM = (yL + yR) / 2 + (random.random() * 2 - 1) * roughness * abs(xR - xL)
-    # if yM > height:
-    #     yM = height
-    #
-    # if yM < 0:
-    #     yM = 0
+    if yM > height:
+        yM = height
+
+    if yM < 0:
+        yM = 0
 
     left_segment = midpoint_displacement(xL, yL, xM, yM, roughness, threshold)
     right_segment = midpoint_displacement(xM, yM, xR, yR, roughness, threshold)
@@ -53,6 +53,6 @@ threshold = 1  # Пороговое значение длины отрезка
 
 
 #xl, yl, xr, yr = map(float, input().split())
-roughness = 5 #float(input())
+roughness = 0.1 #float(input())
 terrain = generate_terrain(width, height, roughness, threshold)
 plot_terrain(terrain)

@@ -44,7 +44,7 @@ def update_terrain():
 # Настройки
 width = 800  # Ширина изображения
 height = 400  # Высота изображения
-threshold = 2 # Пороговое значение длины отрезка
+threshold = 3 # Пороговое значение длины отрезка
 scroll_offset = 200  # Смещение для скроллинга
 
 #xl, yl, xr, yr = map(float, input().split())

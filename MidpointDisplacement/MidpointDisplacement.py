@@ -31,13 +31,8 @@ def generate_terrain(width, height, roughness, threshold):
 def plot_terrain(terrain):
     x = [point[0] for point in terrain]
     y = [point[1] for point in terrain]
-    # for i in range(0, len(y)):
-    #     if y[i] > height:
-    #         y[i] = height
-    #     elif y[i] < 0:
-    #         y[i] = 0
-    print(x)
-    print(max(y))
+    # print(x)
+    # print(max(y))
     plt.fill_between(x, y, min(y), color='black')
     plt.fill_between(x, y, max(y), color='blue')
     plt.plot(x, y, color='green')
@@ -48,11 +43,10 @@ def plot_terrain(terrain):
 
 # Настройки
 width = 500  # Ширина изображения
-height = 500  # Высота изображения
+height = 700  # Высота изображения
 threshold = 1  # Пороговое значение длины отрезка
 
 
-#xl, yl, xr, yr = map(float, input().split())
-roughness = 0.1 #float(input())
-terrain = generate_terrain(width, height, roughness, threshold)
+R = float(input())
+terrain = generate_terrain(width, height, R, threshold)
 plot_terrain(terrain)
